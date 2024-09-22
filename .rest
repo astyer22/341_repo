@@ -1,1 +1,11 @@
+GET http://localhost:3000
+
+###
 GET http://localhost:3000/name
+
+### Render 
+https://three41-repo-wk1-l4pl.onrender.com
+
+### Render Name
+https://three41-repo-wk1-l4pl.onrender.com/name
+
