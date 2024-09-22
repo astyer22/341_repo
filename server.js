@@ -1,4 +1,4 @@
-// index.js (root)
+// server.js (root)
 
 // Import express
 const express = require('express');
