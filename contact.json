@@ -1,0 +1,23 @@
+[
+    {
+        "firstname": "John",
+        "lastname": "Doe",
+        "email": "John.Doe@test.com",
+        "favoriteColor": "Blue",
+        "birthday": "01/01/2000"
+    },
+    {
+        "firstname": "Blake",
+        "lastname": "Johnson",
+        "email": "green.ham@gmail.com",
+        "favoriteColor": "Green",
+        "birthday": "07/15/1987"
+    },
+    {
+        "firstname": "Carlos",
+        "lastname": "Martinez",
+        "email": "pokemon-king24@yahoo.com",
+        "favoriteColor": "Red",
+        "birthday": "02/29/1996"
+    }
+]

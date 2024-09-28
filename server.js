@@ -1,26 +1,20 @@
-// server.js (root)
+// server.js
 
-// Import express
-const express = require('express');
+const express = require('express'); // Import express
+const connectDB = require('./database/connection'); // Import your MongoDB connection
+const routes = require('./routes/index'); // Import routes from index.js
 
-// Import the controller
-const nameController = require('./controllers'); 
+const app = express(); // Create an Express application
+const PORT = process.env.PORT || 3000; // Set the port, defaulting to 3000
 
-// Create an instance of express
-const app = express();
+// Connect to the database
+connectDB();
 
-// Define a port
-const port = 3000;
-
-// Define a route for the homepage
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
-
-// Define the '/name' route using the controller
-app.get('/name', nameController.getName);
+// Middleware
+app.use(express.json()); // Parse JSON bodies
+app.use('/api', routes); // Mount the routes at the /api endpoint
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

@@ -1,11 +1,30 @@
+# Test Root Route
 GET http://localhost:3000
 
 ###
+
+# Test Name Route
 GET http://localhost:3000/name
 
-### Render 
-https://three41-repo-wk1-l4pl.onrender.com
+###
 
-### Render Name
-https://three41-repo-wk1-l4pl.onrender.com/name
+# Test Render Route
+GET https://three41-repo-wk1-l4pl.onrender.com
+
+###
+
+# Test Render Name Route
+GET https://three41-repo-wk1-l4pl.onrender.com/name
+
+###
+
+# Test  All Contacts 
+GET http://localhost:3000/api/contacts
+
+
+###
+
+# Test  Single Contact
+GET http://localhost:3000/api/contacts/66f853a71593703a5cd89d80
+
 
