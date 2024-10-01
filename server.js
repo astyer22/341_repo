@@ -1,20 +1,19 @@
-// server.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('./database/connection');
+const routes = require('./routes/index');
 
-const express = require('express'); // Import express
-const connectDB = require('./database/connection'); // Import your MongoDB connection
-const routes = require('./routes/index'); // Import routes from index.js
+const app = express();
+const PORT = 3000;
 
-const app = express(); // Create an Express application
-const PORT = process.env.PORT || 3000; // Set the port, defaulting to 3000
+app.use(bodyParser.json());
+app.use(routes);  // This includes the contacts routes
 
-// Connect to the database
-connectDB();
-
-// Middleware
-app.use(express.json()); // Parse JSON bodies
-app.use('/api', routes); // Mount the routes at the /api endpoint
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, async () => {
+    try {
+        await mongodb.connect();
+        console.log(`Server is running on http://localhost:${PORT}`);
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
 });

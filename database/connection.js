@@ -1,11 +1,25 @@
-// root > database > connection.js
-const mongoose = require('mongoose');
+const { MongoClient, ObjectId } = require('mongodb');
+require('dotenv').config();
 
-const URI = "mongodb+srv://341user:341user@cluster0.imgys.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const uri = process.env.MONGODB_URI; // Your MongoDB URI
+let database;
 
-const connectDB = async() => {
-   await mongoose.connect(URI);
-   console.log('db connected...!');
-}
+const connect = async () => {
+    const client = new MongoClient(uri);
+    await client.connect();
+    database = client.db('ces341'); // Your database name
+    console.log("MongoDB connected successfully");
+};
 
-module.exports = connectDB;
+const getDatabase = () => {
+    if (!database) {
+        throw new Error("Database not initialized. Call connect() first.");
+    }
+    return database;
+};
+
+module.exports = {
+    connect,
+    getDatabase,
+    ObjectId  // Export ObjectId for use in routes
+};

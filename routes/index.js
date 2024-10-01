@@ -1,9 +1,7 @@
-// routes/index.js
-
 const express = require('express');
-const router = express.Router(); // Corrected the variable name from ':' to 'router'
+const router = express.Router();
+const contactsRoute = require('./contacts');
 
-// Use the contacts route
-router.use('/contacts', require('./contacts'));
+router.use('/contacts', contactsRoute);  // This includes the contacts routes
 
 module.exports = router;

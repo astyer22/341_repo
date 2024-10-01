@@ -1,10 +1,11 @@
-// controllers/index.js
+// root > database > connection.js
+const mongoose = require('mongoose');
 
-// Import all controllers here
-const contactsController = require('./contactsController'); // Adjust the path as necessary
+const URI = "mongodb+srv://341user:341user@cluster0.imgys.mongodb.net/cluster0?retryWrites=true&w=majority&appName=Cluster0";
 
-// Export an object containing the controllers
-module.exports = {
-    contacts: contactsController,
-    // You can add more controllers as you create them
-};
+const connectDB = async () => {
+   await mongoose.connect(URI);
+   console.log('db connected... :)');
+}
+
+module.exports = connectDB;
