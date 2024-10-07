@@ -18,14 +18,48 @@ GET https://three41-repo-wk1-l4pl.onrender.com/name
 
 ###
 
-# Test  All Contacts 
+# Test All Contacts 
 GET http://localhost:3000/contacts
 
 
 ###
 
-# Test  Single Contact
+# Test Single Contact
 GET http://localhost:3000/contacts/66fc9cd1c4380274439392ed
 
 
+###
 
+# Test Post Request Create Contacts
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstname": "Steve",
+  "lastname": "Grimes",
+  "email": "steve.grimes@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1985-07-21"
+}
+
+###
+# Test Put Request Update Contacts
+PUT http://localhost:3000/contacts/67034c3fd8efed80c99d0bb0
+Content-Type: application/json
+
+{
+  "firstname": "Steve",
+  "lastname": "Grimes",
+  "email": "steve.grimes@example.com",
+  "favoriteColor": "Pink",
+  "birthday": "1985-07-21"
+}
+
+###
+# Delete Request
+DELETE http://localhost:3000/contacts/67035225ea4b7d7aee36af21
+Conttent-Content-Type: application/json
+
+{
+  "deleted": true
+}
