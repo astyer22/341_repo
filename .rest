@@ -44,7 +44,7 @@ Content-Type: application/json
 
 ###
 # Test Put Request Update Contacts
-PUT http://localhost:3000/contacts/67034c3fd8efed80c99d0bb0
+PUT http://localhost:3000/contacts/670352c6ea4b7d7aee36af22
 Content-Type: application/json
 
 {
@@ -57,7 +57,7 @@ Content-Type: application/json
 
 ###
 # Delete Request
-DELETE http://localhost:3000/contacts/67035225ea4b7d7aee36af21
+DELETE http://localhost:3000/contacts/670352c6ea4b7d7aee36af22
 Conttent-Content-Type: application/json
 
 {
