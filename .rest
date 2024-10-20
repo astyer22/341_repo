@@ -1,22 +1,22 @@
-# Test Root Route
-GET http://localhost:3000
+# # Test Root Route
+# GET http://localhost:3000
 
-###
+# ###
 
-# Test Name Route
-GET http://localhost:3000/name
+# # Test Name Route
+# GET http://localhost:3000/name
 
-###
+# ###
 
-# Test Render Route
-GET https://three41-repo-wk1-l4pl.onrender.com
+# # Test Render Route
+# GET https://three41-repo-wk1-l4pl.onrender.com
 
-###
+# ###
 
-# Test Render Name Route
-GET https://three41-repo-wk1-l4pl.onrender.com/name
+# # Test Render Name Route
+# GET https://three41-repo-wk1-l4pl.onrender.com/name
 
-###
+# ###
 
 # Test All Contacts 
 GET http://localhost:3000/contacts

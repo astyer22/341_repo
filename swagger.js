@@ -2,16 +2,16 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'Your API Title',
-        description: 'Your API Description',
+        title: 'Contacts API',
+        description: 'This is a simple API for managing contacts.',
     },
-    host: 'your-deployment-url.com', // Update this to your deployed URL
-    schemes: ['https'], // Specify the protocol used
+    host: 'three41-repo.onrender.com', 
+    schemes: ['https'], 
 };
 
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/index.js']; // Update with your routes file
+const endpointsFiles = ['./routes/contacts.js']; // Update with your routes file
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-    require('./server.js'); // Your server file
+    require('./index.js'); 
 });
