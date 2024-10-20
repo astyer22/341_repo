@@ -10,7 +10,7 @@ const doc = {
 };
 
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/contacts.js']; // Update with your routes file
+const endpointsFiles = ['./routes/contacts.js']; 
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
     require('./index.js'); 
