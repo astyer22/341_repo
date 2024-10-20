@@ -1,5 +1,4 @@
 // server.js
-
 const express = require('express');
 const mongodb = require('./database/connection');
 const routes = require('./routes/index');
@@ -12,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // CORS options
 const corsOptions = {
-    origin: 'http://localhost:3000', 
+    origin: 'http://localhost:3000', // Adjust this as needed for your deployment
     optionsSuccessStatus: 200 
 };
 
@@ -22,6 +21,11 @@ app.use(routes);
 
 // Setup Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the API! Visit http://localhost:3000/api-docs for documentation.');
+});
 
 // Global error handler
 app.use((err, req, res, next) => {

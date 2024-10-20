@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Your API Title",
-    "description": "Your API Description",
+    "title": "Contacts",
+    "description": "My chosen Contacts",
     "version": "1.0.0"
   },
-  "host": "your-deployment-url.com",
+  "host": "loaclhost:3000",
   "basePath": "/",
   "schemes": [
     "https"
