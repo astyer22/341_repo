@@ -25,7 +25,7 @@ GET http://localhost:3000/contacts
 ###
 
 # Test Single Contact
-GET http://localhost:3000/contacts/67146d6d6b291f7bddb555db
+GET http://localhost:3000/contacts/6716e66d3a0eb49da0b0b8a5
 
 
 ###
@@ -35,10 +35,10 @@ POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstname": "Blake",
-  "lastname": "haven",
-  "email": "Havenboys@gmail.com",
-  "favoriteColor": "blue",
+  "firstname": "Rubin",
+  "lastname": "Clark",
+  "email": "R_clark@gmail.com",
+  "favoriteColor": "Forest Yellow",
   "birthday": "2012-jan-01"
 }
 
