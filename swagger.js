@@ -5,13 +5,15 @@ const doc = {
         title: 'Contacts API',
         description: 'This is a simple API for managing contacts.',
     },
-    host: 'three41-repo.onrender.com', 
+    host: 'localhost:3000', 
     schemes: ['https'], 
 };
 
 const outputFile = './swagger-output.json';
 const endpointsFiles = ['./routes/contacts.js']; 
 
-swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-    require('./index.js'); 
-});
+swaggerAutogen(outputFiles, endpointsFiles, doc);
+
+// swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+//     require('./index.js'); 
+// });
