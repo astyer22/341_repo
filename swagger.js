@@ -15,5 +15,5 @@ const endpointsFiles = ['./routes/contacts.js'];
 swaggerAutogen(outputFiles, endpointsFiles, doc);
 
 // swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-//     require('./index.js'); 
+//     require('./'); 
 // });
