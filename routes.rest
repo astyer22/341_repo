@@ -1,0 +1,71 @@
+# LOCALHOST ENVIRONMENT
+
+### Get All Contacts
+GET http://localhost:3000/contacts
+
+### Get Contact by ID
+GET http://localhost:3000/contacts/6716e66d3a0eb49da0b0b8a5
+
+### Create Contact
+POST http://localhost:3000/contacts HTTP/1.1  
+Content-Type: application/json
+
+{
+  "firstName": "Rubin",
+  "lastName": "Clark",
+  "email": "R_clark@gmail.com",
+  "favoriteColor": "Forest Yellow",
+  "birthday": "2012-01-01"
+}
+
+### Update Contact by ID
+PUT http://localhost:3000/contacts/670352c6ea4b7d7aee36af22 HTTP/1.1  
+Content-Type: application/json
+
+{
+  "firstName": "Steve",
+  "lastName": "Grimes",
+  "email": "steve.grimes@example.com",
+  "favoriteColor": "Pink",
+  "birthday": "1985-07-21"
+}
+
+### Delete Contact by ID
+DELETE http://localhost:3000/contacts/670352c6ea4b7d7aee36af22 HTTP/1.1
+
+---
+
+# PRODUCTION ENVIRONMENT
+
+### Get All Contacts
+GET https://three41-repo-wk1-l4pl.onrender.com/contacts
+
+### Get Contact by ID
+GET https://three41-repo-wk1-l4pl.onrender.com/contacts/6716e66d3a0eb49da0b0b8a5
+
+### Create Contact
+POST https://three41-repo.onrender.com/contacts HTTP/1.1  
+Content-Type: application/json
+
+{
+  "firstName": "Rubin",
+  "lastName": "Clark",
+  "email": "R_clark@gmail.com",
+  "favoriteColor": "Forest Yellow",
+  "birthday": "2012-01-01"
+}
+
+### Update Contact by ID
+PUT https://three41-repo.onrender.com/contacts/670352c6ea4b7d7aee36af22 HTTP/1.1  
+Content-Type: application/json
+
+{
+  "firstName": "Steve",
+  "lastName": "Grimes",
+  "email": "steve.grimes@example.com",
+  "favoriteColor": "Pink",
+  "birthday": "1985-07-21"
+}
+
+### Delete Contact by ID
+DELETE https://three41-repo.onrender.com/contacts/670352c6ea4b7d7aee36af22 HTTP/1.1

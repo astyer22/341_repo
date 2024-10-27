@@ -1,19 +1,21 @@
 const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
-    info: {
-        title: 'Contacts API',
-        description: 'This is a simple API for managing contacts.',
-    },
-    host: 'localhost:3000', 
-    schemes: ['https'], 
+  info: {
+    title: 'Contacts API',
+    description: "This is a simple API for managing contacts."
+  },
+  host: 'cse341-instructor.herokuapp.com',
+  schemes: ['https']
 };
 
-const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/contacts.js']; 
+const outputFile = './swagger.json';
+const endpointsFiles = ['./routes/index.js'];
 
-swaggerAutogen(outputFiles, endpointsFiles, doc);
+// generate swagger.json
+swaggerAutogen(outputFile, endpointsFiles, doc);
 
-// swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-//     require('./'); 
+// Run server after it gets generated
+// swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
+//   await import('./index.js');
 // });

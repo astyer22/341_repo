@@ -1,45 +1,23 @@
-// server.js
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongodb = require('./database/connection');
-const routes = require('./routes/index');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger-output.json');
-const cors = require('cors'); // Require CORS middleware
 
+const port = process.env.PORT || 3000;
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// CORS options
-const corsOptions = {
-    origin: 'http://localhost:3000', // Adjust this as needed for your deployment
-    optionsSuccessStatus: 200 
-};
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
 
-app.use(cors(corsOptions)); 
-app.use(express.json()); 
-app.use(routes); 
-
-// Setup Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-// Root route
-app.get('/', (req, res) => {
-    res.send('Welcome to the API! Visit http://localhost:3000/api-docs for documentation.');
-});
-
-// Global error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
-
-// Start the server
-app.listen(PORT, async () => {
-    try {
-        await mongodb.connect(); // Ensure the connect function works properly
-        console.log(`Server is running on http://localhost:${PORT}`);
-        console.log(`Swagger UI available at http://localhost:${PORT}/api-docs`);
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
-    }
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
 });

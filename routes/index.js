@@ -2,8 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const contactsRoute = require('./contacts');
 
-router.use('/contacts', contactsRoute);  // This includes the contacts routes
+router.use('/', require('./swagger'));
+router.use('/contacts', require('./contacts'));
 
 module.exports = router;
